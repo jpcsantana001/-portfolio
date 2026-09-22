@@ -252,8 +252,12 @@ export const specialties: Specialty[] = [
   },
 ];
 
+export type TechGroup = { area: string; items: string };
+
 export const gestor360 = {
   name: "Gestor360",
+  stack:
+    "Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS 4 · Supabase/PostgreSQL · Vercel",
   description:
     "Plataforma de gestão empresarial desenvolvida pela equipe da Hub33 para centralizar processos e informações da empresa. Faço parte do time que desenvolve e evolui o sistema — não é um projeto pessoal, mas um produto real em produção no qual contribuo diretamente.",
   modules: [
@@ -273,6 +277,39 @@ export const gestor360 = {
     "Financeiro",
     "Recursos Humanos",
   ],
+  highlights: [
+    "Gestão comercial e financeira multiunidade em produção, com motor de cálculo de comissão e repasse mensal implementado em PL/pgSQL.",
+    "Permissões modeladas por capacidade, com Row Level Security aplicado em cerca de 64 tabelas e auditoria de exposição do schema.",
+    "Pipeline de importação de planilhas (XLSX/CSV) com conciliação, prévia e confirmação por hash antes da gravação.",
+    "Ambiente de homologação separado da produção, com migrations idempotentes que reconstroem o schema do zero a partir do Git.",
+  ],
+  tech: [
+    {
+      area: "Front-end",
+      items:
+        "Next.js 16 (App Router, Server Actions), React 19, TypeScript, Tailwind CSS 4, next-themes",
+    },
+    {
+      area: "Back-end & dados",
+      items:
+        "PostgreSQL via Supabase (@supabase/ssr), funções PL/pgSQL, views, migrations versionadas, Row Level Security por capacidade, triggers e controle de concorrência",
+    },
+    {
+      area: "Infraestrutura",
+      items:
+        "Vercel (deploy, cron jobs e previews), Docker para o Supabase local, Supabase CLI, Git/GitHub com branches, PRs e revisão",
+    },
+    {
+      area: "Integrações",
+      items:
+        "Cloudflare Turnstile na proteção de login, Resend para e-mail transacional, Google Drive API para ingestão de planilhas, exceljs e papaparse na importação XLSX/CSV",
+    },
+    {
+      area: "Qualidade & segurança",
+      items:
+        "Suíte de testes SQL (9 arquivos, 72 asserções) cobrindo motor de cálculo, RLS, exposição de schema e concorrência; headers de segurança HTTP (CSP, nosniff, Referrer-Policy, Permissions-Policy)",
+    },
+  ] satisfies TechGroup[],
 };
 
 export type Principle = {

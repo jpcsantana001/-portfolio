@@ -12,21 +12,65 @@ export function Projects() {
         </Reveal>
 
         <Reveal delay={60}>
-          <div className="overflow-hidden rounded-xl border border-line bg-surface">
-            <div className="border-b border-line p-8 md:p-10">
+          <article className="overflow-hidden rounded-xl border border-line bg-surface">
+            <header className="border-b border-line p-8 md:p-10">
               <div className="flex flex-wrap items-center gap-3">
                 <h3 className="text-2xl font-medium text-ink">{gestor360.name}</h3>
-                <span className="rounded-full border border-signal/40 px-2.5 py-0.5 text-xs text-signal">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-signal/40 px-2.5 py-0.5 text-xs text-signal">
+                  <span className="h-1.5 w-1.5 rounded-full bg-signal" />
                   Em produção
                 </span>
               </div>
+
               <p className="mt-4 max-w-prose leading-relaxed text-muted">
                 {gestor360.description}
               </p>
+
+              <p className="mt-5 font-mono text-xs leading-relaxed text-signal">
+                {gestor360.stack}
+              </p>
+            </header>
+
+            <div className="border-b border-line p-8 md:p-10">
+              <p className="mb-5 font-mono text-xs uppercase tracking-[0.16em] text-muted">
+                O que construí
+              </p>
+              <ul className="grid gap-x-10 gap-y-3 md:grid-cols-2">
+                {gestor360.highlights.map((h) => (
+                  <li
+                    key={h}
+                    className="flex gap-3 text-sm leading-relaxed text-muted"
+                  >
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-signal" />
+                    {h}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="border-b border-line p-8 md:p-10">
+              <p className="mb-5 font-mono text-xs uppercase tracking-[0.16em] text-muted">
+                Tecnologias
+              </p>
+              <dl className="divide-y divide-line">
+                {gestor360.tech.map((group) => (
+                  <div
+                    key={group.area}
+                    className="grid gap-1 py-3.5 first:pt-0 last:pb-0 md:grid-cols-[11rem_1fr] md:gap-8"
+                  >
+                    <dt className="text-sm font-medium text-ink">{group.area}</dt>
+                    <dd className="text-sm leading-relaxed text-muted">
+                      {group.items}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
             </div>
 
             <div className="p-8 md:p-10">
-              <p className="mb-4 text-sm text-muted">Módulos do sistema</p>
+              <p className="mb-4 font-mono text-xs uppercase tracking-[0.16em] text-muted">
+                Módulos do sistema
+              </p>
               <div className="flex flex-wrap gap-2">
                 {gestor360.modules.map((m) => (
                   <span
@@ -38,7 +82,7 @@ export function Projects() {
                 ))}
               </div>
             </div>
-          </div>
+          </article>
         </Reveal>
 
         <Reveal delay={120}>
