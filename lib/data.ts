@@ -52,8 +52,8 @@ export const brands: Record<BrandKey, Brand> = {
     logo: {
       light: "/logos/hub33.png",
       dark: "/logos/hub33.png",
-      width: 256,
-      height: 256,
+      width: 176,
+      height: 176,
     },
   },
   ademicon: {
