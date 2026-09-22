@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://portfolio-joao-pedro-santana.vercel.app/sitemap.xml",
+    sitemap: "https://joaopedrosantana.vercel.app/sitemap.xml",
   };
 }
