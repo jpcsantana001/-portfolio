@@ -94,7 +94,17 @@ export const brands: Record<BrandKey, Brand> = {
     },
     logoHeight: 36,
   },
-  proativa: { name: "Clínica Pró-Ativa", monogram: "PA" },
+  proativa: {
+    name: "Clínica Pró-Ativa",
+    monogram: "PA",
+    logo: {
+      light: "/logos/proativa.png",
+      dark: "/logos/proativa.png",
+      width: 150,
+      height: 150,
+    },
+    logoHeight: 36,
+  },
   unipar: {
     name: "Unipar",
     monogram: "UP",

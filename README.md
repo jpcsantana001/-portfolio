@@ -44,7 +44,7 @@ final (ou pela URL `.vercel.app` do deploy) em três arquivos:
     wordmark por um tom claro.
   - Zaeli: PNG do logotipo institucional (domínio público). O amarelo/vermelho
     funciona nos dois temas, então usa o mesmo arquivo.
-  - Clínica Pró-Ativa: sem logo disponível — cai no selo com monograma.
+  - Clínica Pró-Ativa: PNG recortado da marca enviada, com máscara circular.
   - SESI: PNG do logotipo institucional. Como o azul da marca não tem
     contraste no tema escuro, ele recebe um chip branco (`chipOnDark: true`)
     em vez de ser recolorido.
