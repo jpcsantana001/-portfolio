@@ -1,5 +1,8 @@
 import { Container } from "./container";
 import { HeroGraph } from "./hero-graph";
+import { Portrait } from "./portrait";
+import { BrandWordmark } from "./brand-mark";
+import { CommandHint } from "./command-hint";
 import { personal } from "@/lib/data";
 import { GithubIcon, LinkedinIcon } from "./icons";
 
@@ -7,13 +10,13 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="bg-grid relative overflow-hidden border-b border-line pt-32 pb-20 md:pt-40 md:pb-28"
+      className="bg-grid relative overflow-hidden border-b border-line pt-32 pb-16 md:pt-40 md:pb-20"
     >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,hsl(var(--signal)/0.10),transparent)]"
       />
-      <Container className="relative grid gap-14 md:grid-cols-[1.1fr_0.9fr] md:items-center md:gap-8">
+      <Container className="relative grid gap-14 md:grid-cols-[1.1fr_0.9fr] md:items-center md:gap-10">
         <div>
           <div className="mb-6 flex items-center gap-2 text-sm text-muted">
             <span className="h-1.5 w-1.5 rounded-full bg-signal" />
@@ -63,10 +66,31 @@ export function Hero() {
               <LinkedinIcon size={18} />
             </a>
           </div>
+
+          <CommandHint className="mt-8" />
         </div>
 
-        <div className="flex justify-center md:justify-end">
-          <HeroGraph />
+        <div className="relative flex justify-center md:justify-end">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -left-10 top-1/2 hidden -translate-y-1/2 opacity-30 lg:block"
+          >
+            <HeroGraph />
+          </div>
+          <Portrait />
+        </div>
+      </Container>
+
+      <Container className="relative mt-16 md:mt-20">
+        <div className="flex flex-col gap-5 border-t border-line pt-8 sm:flex-row sm:items-center sm:gap-12">
+          <span className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
+            Atuação e formação
+          </span>
+          <div className="flex flex-wrap items-center gap-x-10 gap-y-5">
+            <BrandWordmark brand="hub33" height={18} />
+            <BrandWordmark brand="ademicon" height={20} />
+            <BrandWordmark brand="unipar" height={26} />
+          </div>
         </div>
       </Container>
     </section>

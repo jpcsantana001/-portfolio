@@ -6,7 +6,7 @@ import { personal, education } from "@/lib/data";
 const facts = [
   { label: "Idade", value: `${personal.age} anos` },
   { label: "Localização", value: personal.location },
-  { label: "Formação", value: `${education.course} · ${education.institution}` },
+  { label: "Formação", value: `${education[0].course} · ${education[0].institution}` },
   { label: "Atuação atual", value: "Full Stack @ Hub33" },
 ];
 

@@ -1,6 +1,7 @@
 import { Container } from "./container";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./section-heading";
+import { BrandTile } from "./brand-mark";
 import { experiences } from "@/lib/data";
 
 export function Experience() {
@@ -24,14 +25,19 @@ export function Experience() {
                   }`}
                   aria-hidden="true"
                 />
-                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                  <h3 className="text-lg font-medium text-ink">{exp.company}</h3>
-                  {exp.period && (
-                    <span className="font-mono text-xs text-signal">{exp.period}</span>
-                  )}
+                <div className="flex items-start gap-3">
+                  <BrandTile brand={exp.brand} />
+                  <div>
+                    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                      <h3 className="text-lg font-medium text-ink">{exp.company}</h3>
+                      {exp.period && (
+                        <span className="font-mono text-xs text-signal">{exp.period}</span>
+                      )}
+                    </div>
+                    <p className="mt-0.5 text-sm text-muted">{exp.role}</p>
+                  </div>
                 </div>
-                <p className="mt-0.5 text-sm text-muted">{exp.role}</p>
-                <ul className="mt-4 space-y-2">
+                <ul className="mt-4 space-y-2 md:pl-[3.25rem]">
                   {exp.bullets.map((b) => (
                     <li
                       key={b}

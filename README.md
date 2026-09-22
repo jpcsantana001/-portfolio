@@ -29,6 +29,23 @@ final (ou pela URL `.vercel.app` do deploy) em três arquivos:
 - **`app/robots.ts`** — URL do sitemap.
 - **`app/sitemap.ts`** — URL da home.
 
+## Foto, logos e paleta de comandos
+
+- **Foto do hero**: `assets/joao-pedro.jpg` (880×1100, recorte 4:5). Para trocar,
+  substitua o arquivo mantendo a proporção — `components/portrait.tsx` usa
+  `next/image` com `placeholder="blur"`, então o Next cuida do resto.
+- **Logos**: ficam em `public/logos` e são declarados no objeto `brands`, em
+  `lib/data.ts`. Cada marca tem variante clara e escura. Marca sem arquivo de
+  logo (hoje Hub33 e Colégio SESI) cai automaticamente no wordmark tipográfico;
+  para usar um logo real, coloque o SVG em `public/logos` e preencha o campo
+  `logo` da marca. Ademicon e Unipar usam os SVGs oficiais dos sites
+  institucionais; a variante escura foi gerada trocando o cinza/preto do
+  wordmark por um tom claro, para funcionar no tema escuro.
+- **Paleta de comandos** (`components/command-palette.tsx`): abre com `Ctrl K` /
+  `⌘K` ou pelo botão da navbar. Navega entre seções, copia o e-mail, abre
+  GitHub/LinkedIn e troca o tema. Para adicionar um comando, inclua um item na
+  lista `actions` do componente.
+
 ## Adicionando novos projetos
 
 A seção "Projetos" hoje mostra apenas o Gestor360 (`lib/data.ts`, objeto

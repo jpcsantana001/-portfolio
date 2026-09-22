@@ -9,6 +9,7 @@ import { Education } from "@/components/education";
 import { Robotics } from "@/components/robotics";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
+import { CommandPalette } from "@/components/command-palette";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <CommandPalette />
     </>
   );
 }
