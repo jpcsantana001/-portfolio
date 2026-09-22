@@ -6,8 +6,16 @@ import { personal, education } from "@/lib/data";
 const facts = [
   { label: "Idade", value: `${personal.age} anos` },
   { label: "Localização", value: personal.location },
-  { label: "Formação", value: `${education[0].course} · ${education[0].institution}` },
-  { label: "Atuação atual", value: "Full Stack @ Hub33" },
+  {
+    label: "Formação",
+    value: education[0].course,
+    detail: education[0].institution,
+  },
+  {
+    label: "Atuação atual",
+    value: "Estagiário Full Stack",
+    detail: "Hub33 / Ademicon",
+  },
 ];
 
 export function About() {
@@ -45,9 +53,21 @@ export function About() {
           <Reveal delay={120}>
             <dl className="divide-y divide-line border-y border-line">
               {facts.map((f) => (
-                <div key={f.label} className="flex items-center justify-between py-3.5">
-                  <dt className="text-sm text-muted">{f.label}</dt>
-                  <dd className="text-sm font-medium text-ink">{f.value}</dd>
+                <div
+                  key={f.label}
+                  className="flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
+                >
+                  <dt className="shrink-0 text-sm text-muted">{f.label}</dt>
+                  <dd className="sm:text-right">
+                    <span className="block text-sm font-medium text-ink">
+                      {f.value}
+                    </span>
+                    {f.detail && (
+                      <span className="mt-0.5 block text-xs leading-relaxed text-muted">
+                        {f.detail}
+                      </span>
+                    )}
+                  </dd>
                 </div>
               ))}
             </dl>

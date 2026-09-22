@@ -52,8 +52,13 @@ export function BrandWordmark({
 
   const width = Math.round((b.logo.width / b.logo.height) * height);
 
+  // Logo com cor de marca escura (SESI) precisa de fundo claro no tema escuro.
+  const chip = b.chipOnDark
+    ? "dark:rounded-md dark:bg-white dark:px-2 dark:py-1.5"
+    : "";
+
   return (
-    <span className={`inline-flex items-center ${className}`}>
+    <span className={`inline-flex items-center ${chip} ${className}`}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={b.logo.light}

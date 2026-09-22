@@ -40,11 +40,22 @@ export type Brand = {
   name: string;
   monogram: string;
   logo?: { light: string; dark: string; width: number; height: number };
+  /** Logo cuja cor de marca não sobrevive ao tema escuro: recebe um chip claro. */
+  chipOnDark?: boolean;
   site?: string;
 };
 
 export const brands: Record<BrandKey, Brand> = {
-  hub33: { name: "Hub33", monogram: "H33" },
+  hub33: {
+    name: "Hub33",
+    monogram: "H33",
+    logo: {
+      light: "/logos/hub33.png",
+      dark: "/logos/hub33.png",
+      width: 256,
+      height: 256,
+    },
+  },
   ademicon: {
     name: "Ademicon",
     monogram: "AD",
@@ -70,7 +81,17 @@ export const brands: Record<BrandKey, Brand> = {
     },
     site: "https://www.unipar.br",
   },
-  sesi: { name: "Colégio SESI", monogram: "SESI" },
+  sesi: {
+    name: "SESI — Serviço Social da Indústria",
+    monogram: "SESI",
+    logo: {
+      light: "/logos/sesi.png",
+      dark: "/logos/sesi.png",
+      width: 436,
+      height: 110,
+    },
+    chipOnDark: true,
+  },
 };
 
 export type Experience = {

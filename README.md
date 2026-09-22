@@ -34,13 +34,19 @@ final (ou pela URL `.vercel.app` do deploy) em três arquivos:
 - **Foto do hero**: `assets/joao-pedro.jpg` (880×1100, recorte 4:5). Para trocar,
   substitua o arquivo mantendo a proporção — `components/portrait.tsx` usa
   `next/image` com `placeholder="blur"`, então o Next cuida do resto.
-- **Logos**: ficam em `public/logos` e são declarados no objeto `brands`, em
-  `lib/data.ts`. Cada marca tem variante clara e escura. Marca sem arquivo de
-  logo (hoje Hub33 e Colégio SESI) cai automaticamente no wordmark tipográfico;
-  para usar um logo real, coloque o SVG em `public/logos` e preencha o campo
-  `logo` da marca. Ademicon e Unipar usam os SVGs oficiais dos sites
-  institucionais; a variante escura foi gerada trocando o cinza/preto do
-  wordmark por um tom claro, para funcionar no tema escuro.
+- **Logos das marcas**: ficam em `public/logos` e são declarados no objeto
+  `brands`, em `lib/data.ts`. Cada marca aceita variante clara e escura; marca
+  sem arquivo de logo cai automaticamente no wordmark tipográfico.
+  - Ademicon e Unipar: SVGs oficiais dos sites institucionais. A variante
+    escura foi gerada trocando o cinza/preto do wordmark por um tom claro.
+  - Hub33: PNG recortado do emblema do grupo, com máscara circular.
+  - SESI: PNG do logotipo institucional. Como o azul da marca não tem
+    contraste no tema escuro, ele recebe um chip branco (`chipOnDark: true`)
+    em vez de ser recolorido.
+- **Ícones das tecnologias**: `lib/tech-icons.ts` guarda o path SVG e a cor
+  oficial de cada marca (base: Simple Icons, CC0). `colorDark` clareia marcas
+  escuras demais para o tema escuro. Tecnologia sem ícone — hoje SQL — mostra
+  um glifo genérico de banco de dados.
 - **Paleta de comandos** (`components/command-palette.tsx`): abre com `Ctrl K` /
   `⌘K` ou pelo botão da navbar. Navega entre seções, copia o e-mail, abre
   GitHub/LinkedIn e troca o tema. Para adicionar um comando, inclua um item na

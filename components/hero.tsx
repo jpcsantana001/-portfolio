@@ -87,7 +87,7 @@ export function Hero() {
             Atuação e formação
           </span>
           <div className="flex flex-wrap items-center gap-x-10 gap-y-5">
-            <BrandWordmark brand="hub33" height={18} />
+            <BrandWordmark brand="hub33" height={44} />
             <BrandWordmark brand="ademicon" height={20} />
             <BrandWordmark brand="unipar" height={26} />
           </div>
