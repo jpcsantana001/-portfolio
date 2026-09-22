@@ -1,7 +1,7 @@
-import { MailIcon, MapPinIcon } from "lucide-react";
+import { DownloadIcon, MailIcon, MapPinIcon } from "lucide-react";
 import { Container } from "./container";
 import { Reveal } from "./reveal";
-import { personal } from "@/lib/data";
+import { personal, resume } from "@/lib/data";
 import { CopyEmailButton } from "./copy-email-button";
 import { GithubIcon, LinkedinIcon } from "./icons";
 
@@ -28,6 +28,23 @@ export function Contact() {
                 {personal.email}
               </a>
               <CopyEmailButton email={personal.email} />
+            </div>
+
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+              <a
+                href={resume.pdf}
+                download
+                className="focus-ring inline-flex items-center gap-2 rounded-md border border-line px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-void"
+              >
+                <DownloadIcon size={16} />
+                Baixar currículo (PDF)
+              </a>
+              <a
+                href={resume.page}
+                className="focus-ring inline-flex items-center gap-2 rounded-md px-3 py-2.5 text-sm text-muted transition-colors hover:text-ink"
+              >
+                ou ver no navegador
+              </a>
             </div>
 
             <div className="mt-8 flex items-center justify-center gap-3">

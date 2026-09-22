@@ -94,6 +94,13 @@ export const brands: Record<BrandKey, Brand> = {
   },
 };
 
+// Currículo: o PDF é gerado imprimindo a página /curriculo (mesma fonte de
+// dados deste arquivo). Para atualizá-lo, veja o README.
+export const resume = {
+  page: "/curriculo",
+  pdf: "/curriculo-joao-pedro-santana.pdf",
+};
+
 export type Experience = {
   company: string;
   role: string;
@@ -129,6 +136,7 @@ export const experiences: Experience[] = [
     bullets: [
       "Desenvolvimento frontend e backend.",
       "Criação e manutenção de sistemas web.",
+      "Configuração de fluxos de dados no Pentaho Data Integration (Spoon).",
       "Aprendizado e aplicação prática de tecnologias de desenvolvimento.",
     ],
   },
@@ -167,6 +175,7 @@ export const techStack: string[] = [
   "CSS",
   "SQL",
   "PostgreSQL",
+  "Pentaho",
   "Supabase",
   "Vercel",
   "Docker",
@@ -314,7 +323,7 @@ export const courses: Course[] = [
   {
     title: "Programação em Python — básico",
     provider: "Fundação Bradesco",
-    status: "Em andamento",
+    status: "Concluído",
   },
   {
     title: "Manutenção de computadores e celulares",
@@ -329,8 +338,14 @@ export type Language = {
 
 export const languages: Language[] = [
   { name: "Português", level: "Língua materna" },
-  { name: "Inglês", level: "A1 — iniciante" },
+  { name: "Inglês", level: "Intermediário" },
 ];
+
+export const leadership = {
+  role: "Secretário-geral do grêmio estudantil",
+  place: "Colégio SESI Umuarama",
+  note: "Cargo eleito de representação estudantil.",
+};
 
 export const robotics = {
   period: "2023 – 2025",

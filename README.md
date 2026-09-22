@@ -52,6 +52,28 @@ final (ou pela URL `.vercel.app` do deploy) em três arquivos:
   GitHub/LinkedIn e troca o tema. Para adicionar um comando, inclua um item na
   lista `actions` do componente.
 
+## Currículo
+
+A página `/curriculo` monta o currículo a partir do mesmo `lib/data.ts` que
+alimenta o site — não existe conteúdo duplicado. O PDF em
+`public/curriculo-joao-pedro-santana.pdf` é essa página impressa.
+
+Para regerar o PDF depois de mudar qualquer dado:
+
+```bash
+npm run build && npm start &                 # sobe em :3000
+google-chrome --headless=new --no-pdf-header-footer \
+  --print-to-pdf=public/curriculo-joao-pedro-santana.pdf \
+  http://localhost:3000/curriculo
+```
+
+O layout de impressão (A4, margens, quebras de página) está no final de
+`app/globals.css`, na seção `.cv`. A página é `noindex`: o currículo é para
+quem recebe o link, não para busca.
+
+Por decisão de privacidade, o currículo **não** traz endereço residencial,
+data de nascimento, estado civil nem telefone.
+
 ## Adicionando novos projetos
 
 A seção "Projetos" hoje mostra apenas o Gestor360 (`lib/data.ts`, objeto

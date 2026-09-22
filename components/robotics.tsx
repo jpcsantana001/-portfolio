@@ -1,8 +1,8 @@
-import { CpuIcon } from "lucide-react";
+import { CpuIcon, UsersIcon } from "lucide-react";
 import { Container } from "./container";
 import { Reveal } from "./reveal";
 import { SectionHeading } from "./section-heading";
-import { robotics } from "@/lib/data";
+import { leadership, robotics } from "@/lib/data";
 
 export function Robotics() {
   return (
@@ -10,7 +10,7 @@ export function Robotics() {
       <Container>
         <Reveal>
           <SectionHeading
-            title="Robótica"
+            title="Robótica & liderança"
             description={`${robotics.place} · ${robotics.period}`}
           />
         </Reveal>
@@ -47,6 +47,21 @@ export function Robotics() {
             </ol>
           </Reveal>
         </div>
+
+        <Reveal delay={180}>
+          <div className="mt-10 flex items-start gap-4 rounded-xl border border-line bg-surface p-6">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-line text-signal">
+              <UsersIcon size={20} />
+            </span>
+            <div>
+              <h3 className="text-sm font-medium text-ink">{leadership.role}</h3>
+              <p className="mt-0.5 text-sm text-muted">{leadership.place}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                {leadership.note}
+              </p>
+            </div>
+          </div>
+        </Reveal>
       </Container>
     </section>
   );

@@ -7,13 +7,14 @@ import {
   CheckIcon,
   CopyIcon,
   CornerDownLeftIcon,
+  DownloadIcon,
   ExternalLinkIcon,
   MailIcon,
   MoonIcon,
   SearchIcon,
   SunIcon,
 } from "lucide-react";
-import { personal } from "@/lib/data";
+import { personal, resume } from "@/lib/data";
 
 const OPEN_EVENT = "portfolio:open-command-palette";
 
@@ -42,7 +43,7 @@ const sections = [
   { id: "como-trabalho", label: "Como trabalho" },
   { id: "formacao", label: "Formação" },
   { id: "cursos", label: "Cursos & idiomas" },
-  { id: "robotica", label: "Robótica" },
+  { id: "robotica", label: "Robótica & liderança" },
   { id: "contato", label: "Contato" },
 ];
 
@@ -125,6 +126,16 @@ export function CommandPalette() {
         icon: <MailIcon size={15} />,
         run: () => {
           window.location.href = `mailto:${personal.email}`;
+        },
+      },
+      {
+        id: "resume",
+        label: "Baixar currículo (PDF)",
+        group: "Ações",
+        keywords: "curriculo cv pdf resume baixar download",
+        icon: <DownloadIcon size={15} />,
+        run: () => {
+          window.location.href = resume.pdf;
         },
       },
       {
