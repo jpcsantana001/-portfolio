@@ -41,6 +41,7 @@ const sections = [
   { id: "projetos", label: "Projetos" },
   { id: "como-trabalho", label: "Como trabalho" },
   { id: "formacao", label: "Formação" },
+  { id: "cursos", label: "Cursos & idiomas" },
   { id: "robotica", label: "Robótica" },
   { id: "contato", label: "Contato" },
 ];

@@ -303,6 +303,35 @@ export const education: EducationItem[] = [
   },
 ];
 
+export type Course = {
+  title: string;
+  provider?: string;
+  status: "Concluído" | "Em andamento";
+};
+
+// Fonte: currículo (set/2026). Para adicionar um curso, inclua um item aqui.
+export const courses: Course[] = [
+  {
+    title: "Programação em Python — básico",
+    provider: "Fundação Bradesco",
+    status: "Em andamento",
+  },
+  {
+    title: "Manutenção de computadores e celulares",
+    status: "Concluído",
+  },
+];
+
+export type Language = {
+  name: string;
+  level: string;
+};
+
+export const languages: Language[] = [
+  { name: "Português", level: "Língua materna" },
+  { name: "Inglês", level: "A1 — iniciante" },
+];
+
 export const robotics = {
   period: "2023 – 2025",
   place: "Colégio SESI Umuarama",

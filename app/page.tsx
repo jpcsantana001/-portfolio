@@ -6,6 +6,7 @@ import { Stack } from "@/components/stack";
 import { Projects } from "@/components/projects";
 import { HowIWork } from "@/components/how-i-work";
 import { Education } from "@/components/education";
+import { Courses } from "@/components/courses";
 import { Robotics } from "@/components/robotics";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
@@ -23,6 +24,7 @@ export default function Home() {
         <Projects />
         <HowIWork />
         <Education />
+        <Courses />
         <Robotics />
         <Contact />
       </main>
