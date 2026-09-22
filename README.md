@@ -40,6 +40,11 @@ final (ou pela URL `.vercel.app` do deploy) em três arquivos:
   - Ademicon e Unipar: SVGs oficiais dos sites institucionais. A variante
     escura foi gerada trocando o cinza/preto do wordmark por um tom claro.
   - Hub33: PNG recortado do emblema do grupo, com máscara circular.
+  - Winsite: PNG do site da empresa; a variante escura troca o verde-escuro do
+    wordmark por um tom claro.
+  - Zaeli: PNG do logotipo institucional (domínio público). O amarelo/vermelho
+    funciona nos dois temas, então usa o mesmo arquivo.
+  - Clínica Pró-Ativa: sem logo disponível — cai no selo com monograma.
   - SESI: PNG do logotipo institucional. Como o azul da marca não tem
     contraste no tema escuro, ele recebe um chip branco (`chipOnDark: true`)
     em vez de ser recolorido.

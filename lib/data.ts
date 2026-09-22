@@ -40,6 +40,8 @@ export type Brand = {
   name: string;
   monogram: string;
   logo?: { light: string; dark: string; width: number; height: number };
+  /** Altura de exibição do logo, equilibrando proporções diferentes. */
+  logoHeight?: number;
   /** Logo cuja cor de marca não sobrevive ao tema escuro: recebe um chip claro. */
   chipOnDark?: boolean;
   site?: string;
@@ -55,6 +57,7 @@ export const brands: Record<BrandKey, Brand> = {
       width: 176,
       height: 176,
     },
+    logoHeight: 40,
   },
   ademicon: {
     name: "Ademicon",
@@ -65,10 +68,32 @@ export const brands: Record<BrandKey, Brand> = {
       width: 850,
       height: 185,
     },
+    logoHeight: 20,
     site: "https://www.ademicon.com.br",
   },
-  winsite: { name: "Winsite Sistemas", monogram: "WS" },
-  zaeli: { name: "Alimentos Zaeli", monogram: "ZA" },
+  winsite: {
+    name: "Winsite Sistemas",
+    monogram: "WS",
+    logo: {
+      light: "/logos/winsite.png",
+      dark: "/logos/winsite-dark.png",
+      width: 440,
+      height: 177,
+    },
+    logoHeight: 28,
+    site: "https://winsitesistemas.com.br",
+  },
+  zaeli: {
+    name: "Alimentos Zaeli",
+    monogram: "ZA",
+    logo: {
+      light: "/logos/zaeli.png",
+      dark: "/logos/zaeli.png",
+      width: 144,
+      height: 144,
+    },
+    logoHeight: 36,
+  },
   proativa: { name: "Clínica Pró-Ativa", monogram: "PA" },
   unipar: {
     name: "Unipar",
@@ -79,6 +104,7 @@ export const brands: Record<BrandKey, Brand> = {
       width: 300,
       height: 106,
     },
+    logoHeight: 26,
     site: "https://www.unipar.br",
   },
   sesi: {
@@ -90,6 +116,7 @@ export const brands: Record<BrandKey, Brand> = {
       width: 436,
       height: 110,
     },
+    logoHeight: 24,
     chipOnDark: true,
   },
 };

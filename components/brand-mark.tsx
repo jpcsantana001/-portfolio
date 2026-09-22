@@ -30,27 +30,29 @@ export function BrandTile({
  */
 export function BrandWordmark({
   brand,
-  height = 22,
+  height,
   className = "",
 }: {
   brand: BrandKey;
+  /** Sobrescreve a altura preferida da marca (`logoHeight`). */
   height?: number;
   className?: string;
 }) {
   const b = brands[brand];
+  const size = height ?? b.logoHeight ?? 22;
 
   if (!b.logo) {
     return (
       <span
         className={`font-medium uppercase tracking-[0.2em] text-ink ${className}`}
-        style={{ fontSize: Math.round(height * 0.62) }}
+        style={{ fontSize: Math.round(size * 0.62) }}
       >
         {b.name}
       </span>
     );
   }
 
-  const width = Math.round((b.logo.width / b.logo.height) * height);
+  const width = Math.round((b.logo.width / b.logo.height) * size);
 
   // Logo com cor de marca escura (SESI) precisa de fundo claro no tema escuro.
   const chip = b.chipOnDark
@@ -64,8 +66,8 @@ export function BrandWordmark({
         src={b.logo.light}
         alt={b.name}
         width={width}
-        height={height}
-        style={{ width, height }}
+        height={size}
+        style={{ width, height: size }}
         className="block dark:hidden"
       />
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -73,8 +75,8 @@ export function BrandWordmark({
         src={b.logo.dark}
         alt={b.name}
         width={width}
-        height={height}
-        style={{ width, height }}
+        height={size}
+        style={{ width, height: size }}
         className="hidden dark:block"
       />
     </span>
