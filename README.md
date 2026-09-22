@@ -79,6 +79,23 @@ quem recebe o link, não para busca.
 Por decisão de privacidade, o currículo **não** traz endereço residencial,
 data de nascimento, estado civil nem telefone.
 
+## Segurança
+
+Os cabeçalhos ficam em `next.config.mjs`, aplicados a todas as rotas: CSP,
+`nosniff`, `X-Frame-Options: DENY`, `Referrer-Policy`, `Permissions-Policy` e
+HSTS. O `X-Powered-By` é desligado.
+
+A CSP é restritiva porque o site não carrega nada de origem externa — fontes,
+ícones e logos são servidos do próprio domínio. A exceção é
+`script-src 'unsafe-inline'`, necessário para o bootstrap inline do Next e
+para o next-themes aplicar o tema antes da primeira pintura; remover isso
+exigiria nonce por requisição e tornaria as páginas dinâmicas. `'unsafe-eval'`
+não está liberado.
+
+Ao adicionar qualquer recurso de terceiros (fonte do Google, script de
+analytics, iframe de vídeo), a CSP precisa ser ajustada na mesma linha —
+senão o navegador bloqueia silenciosamente.
+
 ## Adicionando novos projetos
 
 A seção "Projetos" hoje mostra apenas o Gestor360 (`lib/data.ts`, objeto
