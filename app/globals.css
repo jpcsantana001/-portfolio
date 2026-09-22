@@ -259,3 +259,95 @@ section[id] {
     break-inside: avoid;
   }
 }
+
+/* ---------------------------------------------------------------------
+   Galáxia atrás do retrato no hero. A nebulosa é CSS (estática e barata);
+   só as estrelas rodam em canvas. A máscara radial dissolve as bordas para
+   o fundo da página, evitando a impressão de "caixa".
+   --------------------------------------------------------------------- */
+
+.galaxy {
+  position: absolute;
+  inset: -42% -34%;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(
+    closest-side,
+    #000 45%,
+    rgba(0, 0, 0, 0.55) 70%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    closest-side,
+    #000 45%,
+    rgba(0, 0, 0, 0.55) 70%,
+    transparent 100%
+  );
+}
+
+.galaxy-core {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background:
+    radial-gradient(30% 22% at 38% 42%, hsl(var(--signal) / 0.5), transparent 70%),
+    radial-gradient(34% 30% at 62% 30%, hsl(268 88% 64% / 0.42), transparent 72%),
+    radial-gradient(38% 28% at 30% 70%, hsl(195 92% 58% / 0.3), transparent 72%),
+    radial-gradient(60% 46% at 50% 50%, hsl(250 70% 40% / 0.14), transparent 78%);
+  filter: blur(22px);
+}
+
+/* Braços da espiral: duas varreduras cônicas girando em velocidades e
+   sentidos diferentes — movimento sem custo de JavaScript. */
+.galaxy-core::before,
+.galaxy-core::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    hsl(var(--signal) / 0.32) 45deg,
+    transparent 130deg,
+    hsl(268 85% 66% / 0.28) 210deg,
+    transparent 310deg
+  );
+  filter: blur(20px);
+  animation: galaxy-spin 90s linear infinite;
+}
+
+.galaxy-core::after {
+  inset: 12%;
+  opacity: 0.8;
+  animation-duration: 150s;
+  animation-direction: reverse;
+}
+
+@keyframes galaxy-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .galaxy-core::before,
+  .galaxy-core::after {
+    animation: none;
+  }
+}
+
+.galaxy-stars {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* No tema claro a nebulosa entra mais discreta, como um halo colorido. */
+:root:not(.dark) .galaxy {
+  opacity: 0.6;
+}
+
+:root:not(.dark) .galaxy-stars {
+  opacity: 0.5;
+}

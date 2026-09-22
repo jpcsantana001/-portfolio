@@ -1,6 +1,6 @@
 import { Container } from "./container";
-import { HeroGraph } from "./hero-graph";
 import { Portrait } from "./portrait";
+import { Starfield } from "./starfield";
 import { BrandWordmark } from "./brand-mark";
 import { CommandHint } from "./command-hint";
 import { personal } from "@/lib/data";
@@ -70,14 +70,11 @@ export function Hero() {
           <CommandHint className="mt-8" />
         </div>
 
-        <div className="relative flex justify-center md:justify-end">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -left-10 top-1/2 hidden -translate-y-1/2 opacity-30 lg:block"
-          >
-            <HeroGraph />
+        <div className="relative isolate flex justify-center md:justify-end">
+          <Starfield className="z-0" />
+          <div className="relative z-10">
+            <Portrait />
           </div>
-          <Portrait />
         </div>
       </Container>
 
