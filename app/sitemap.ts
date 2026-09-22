@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://joaopedrosantana.dev", // TODO: atualizar com o domínio final
+      url: "https://portfolio-joao-pedro-santana.vercel.app",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,

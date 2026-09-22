@@ -3,9 +3,6 @@
 // e adicionar novos projetos ou experiências — os componentes só lêem
 // os dados daqui, então você não precisa mexer em JSX para atualizar
 // informações.
-//
-// Itens marcados com "TODO" são placeholders: substitua pelos seus
-// dados reais antes de publicar.
 // -----------------------------------------------------------------------
 
 export const personal = {

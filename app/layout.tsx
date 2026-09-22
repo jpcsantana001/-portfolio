@@ -5,7 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { personal } from "@/lib/data";
 
-const siteUrl = "https://joaopedrosantana.dev"; // TODO: trocar pela URL final do domínio
+const siteUrl = "https://portfolio-joao-pedro-santana.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

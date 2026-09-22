@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://joaopedrosantana.dev/sitemap.xml", // TODO: atualizar com o domínio final
+    sitemap: "https://portfolio-joao-pedro-santana.vercel.app/sitemap.xml",
   };
 }
